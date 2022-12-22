@@ -196,13 +196,27 @@
 		@apply dark:bg-neutral-800;
 	}
 
-	header,
+	header {
+		@apply text-black dark:text-inherit;
+		@apply bg-neutral-300 dark:bg-neutral-700;
+	}
+
+	nav {
+		@apply text-neutral-100 dark:text-inherit;
+		@apply bg-neutral-700 dark:bg-neutral-900;
+	}
+
+	footer {
+		@apply text-neutral-100 dark:text-inherit;
+		@apply bg-neutral-700 dark:bg-neutral-900;
+	}
+
 	strong {
 		@apply text-neutral-900 dark:text-white;
 	}
 
 	hr {
-		@apply text-neutral-200 dark:text-neutral-700;
+		@apply border-neutral-200 dark:border-neutral-700;
 	}
 
 	blockquote p {

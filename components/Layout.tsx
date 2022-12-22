@@ -1,8 +1,10 @@
-// Core
 import React from "react"
 import Head from "next/head"
+import { LayoutContext } from "./common/providers/LayoutProvider"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+	const { darkMode, toogleDarkMode } = React.useContext(LayoutContext)
+
 	return (
 		<>
 			<Head>
@@ -10,10 +12,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<header className="h-32 bg-neutral-300"></header>
-			<nav className="h-16 bg-neutral-700"></nav>
+			<header className="h-32 flex justify-center items-center">Header</header>
+			<nav className="h-16 flex justify-center items-center">
+				Nav <div onClick={toogleDarkMode}>{darkMode ? "Dark" : "Light"} Mode</div>
+			</nav>
 			<main>{children}</main>
-			<footer className="h-64 bg-neutral-700"></footer>
+			<footer className="h-64 flex justify-center items-center">Footer</footer>
 		</>
 	)
 }
