@@ -7,7 +7,7 @@
 		@apply text-base;
 	}
 
-	body * {
+	main * {
 		@apply gap-2 md:gap-4 lg:gap-6;
 	}
 
@@ -111,27 +111,27 @@
 		@apply rounded;
 	}
 
-	ol,
-	ul {
+	main ol,
+	main ul {
 		@apply text-sm lg:text-base;
 		@apply list-inside;
 		@apply my-3 lg:my-4;
 	}
 
-	ol {
+	main ol {
 		@apply list-decimal;
 	}
 
-	ul {
+	main ul {
 		@apply list-disc;
 	}
 
-	li {
+	main li {
 		@apply mb-0.5 lg:mb-1;
 	}
 
-	ol > li,
-	ul > li {
+	main ol > li,
+	main ul > li {
 		@apply pl-2;
 	}
 
@@ -155,10 +155,10 @@
 		@apply mb-4;
 	}
 
-	ul ul,
-	ul ol,
-	ol ul,
-	ol ol {
+	main ul ul,
+	main ul ol,
+	main ol ul,
+	main ol ol {
 		@apply my-2;
 	}
 
