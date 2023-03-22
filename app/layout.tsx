@@ -6,13 +6,29 @@ import Header from "./ui/Header"
 import Nav from "./ui/Nav"
 import Footer from "./ui/Footer"
 import "./globals.css"
+import AuthProvider from "../store/AuthProvider"
+import { headers } from "next/headers"
+import type { Session } from "next-auth"
 
 export const metadata = {
   title: "Home",
   description: "Welcome to Next.js 13 STore by Thomas Savournin",
 }
+async function getSession(cookie: string): Promise<Session> {
+  const response = await fetch(`${process.env.LOCAL_AUTH_URL}/api/auth/session`, {
+    headers: {
+      cookie,
+    },
+  })
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const session = await response.json()
+
+  return Object.keys(session).length > 0 ? session : null
+}
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const session = await getSession(headers().get("cookie") ?? "")
+
   return (
     <html lang="fr">
       <head>
@@ -22,15 +38,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
 
       <body>
-        <LayoutProvider>
-          <BgCache />
-          <Sidebar />
-          <Cart />
-          <Header />
-          <Nav />
-          <main>{children}</main>
-          <Footer />
-        </LayoutProvider>
+        <AuthProvider session={session}>
+          <LayoutProvider>
+            <BgCache />
+            <Sidebar />
+            <Cart />
+            <Header />
+            <Nav />
+            <main>{children}</main>
+            <Footer />
+          </LayoutProvider>
+        </AuthProvider>
       </body>
     </html>
   )
