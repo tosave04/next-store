@@ -135,23 +135,23 @@
 		@apply pl-2;
 	}
 
-	> ol > li > *:first-child {
+	* > ol > li > *:first-child {
 		@apply mt-4;
 	}
 
-	> ol > li > *:last-child {
+	* > ol > li > *:last-child {
 		@apply mb-4;
 	}
 
-	> ul > li p {
+	* > ul > li p {
 		@apply pl-2;
 	}
 
-	> ul > li > *:first-child {
+	* > ul > li > *:first-child {
 		@apply mt-4;
 	}
 
-	> ul > li > *:last-child {
+	* > ul > li > *:last-child {
 		@apply mb-4;
 	}
 
