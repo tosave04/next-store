@@ -1,6 +1,7 @@
 "use client"
 
 import { useLayout } from "../../store/LayoutProvider"
+import { BiMoon, BiSun } from "react-icons/bi"
 
 export default function Nav() {
   const { darkMode, toogleDarkMode, openSidebar, openCart } = useLayout()
@@ -9,8 +10,8 @@ export default function Nav() {
     <nav className="h-16 flex justify-center items-center gap-12">
       <div onClick={openSidebar}>Sidebar</div>
       <div onClick={openCart}>Cart</div>
-      <div onClick={toogleDarkMode}>
-        <i className={`bx ${darkMode ? "bx-moon" : "bx-sun"} text-2xl cursor-pointer`} />
+      <div className="cursor-pointer" onClick={toogleDarkMode}>
+        {darkMode ? <BiMoon className="w-6 h-6" /> : <BiSun className="w-6 h-6" />}
       </div>
     </nav>
   )

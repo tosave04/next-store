@@ -1,6 +1,8 @@
 "use client"
 
 import { useLayout } from "../../store/LayoutProvider"
+import { BiHome, BiSearch, BiShoppingBag, BiUser } from "react-icons/bi"
+import type { IconType } from "react-icons"
 
 export default function Sidebar() {
   const { sidebar } = useLayout()
@@ -18,7 +20,7 @@ export default function Sidebar() {
 
       <div className="relative mt-6">
         <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-          <i className="bx bx-search"></i>
+          <BiSearch />
         </span>
 
         <input
@@ -30,15 +32,15 @@ export default function Sidebar() {
 
       <div className="flex flex-col justify-between flex-1 mt-4">
         <ul>
-          <Element title={"Accueil"} icon={"bx-home"} href={"#"} />
-          <Element title={"Compte"} icon={"bx-user"} href={"#"} />
-          <Element title={"Panier"} icon={"bx-shopping-bag"} href={"#"} />
+          <Element title={"Accueil"} Icon={BiHome} href={"#"} />
+          <Element title={"Compte"} Icon={BiUser} href={"#"} />
+          <Element title={"Panier"} Icon={BiShoppingBag} href={"#"} />
 
           <hr className="my-4 border-gray-200 dark:border-gray-600" />
 
-          <Element title={"Accueil"} icon={"bx-home"} href={"#"} />
-          <Element title={"Compte"} icon={"bx-user"} href={"#"} />
-          <Element title={"Panier"} icon={"bx-shopping-bag"} href={"#"} />
+          <Element title={"Accueil"} Icon={BiHome} href={"#"} />
+          <Element title={"Compte"} Icon={BiUser} href={"#"} />
+          <Element title={"Panier"} Icon={BiShoppingBag} href={"#"} />
         </ul>
 
         <Compte href="#" className="flex items-center px-4 -mx-2" />
@@ -47,16 +49,14 @@ export default function Sidebar() {
   )
 }
 
-const Element = ({ title, icon, href }: { title: string; icon: string; href: string }) => {
+const Element = ({ title, Icon, href }: { title: string; Icon: IconType; href: string }) => {
   return (
     <li>
       <a
         href={href}
-        className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+        className="flex flex-row items-center gap-4 h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
       >
-        <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
-          <i className={`bx ${icon}`} />
-        </span>
+        <Icon className="h-6 w-6 text-gray-400" />
         <span className="text-sm font-medium">{title}</span>
       </a>
     </li>
