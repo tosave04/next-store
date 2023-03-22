@@ -196,6 +196,11 @@
     @apply dark:bg-neutral-800;
   }
 
+  a {
+    @apply text-sky-500;
+    @apply hover:text-sky-700 dark:hover:text-sky-300;
+  }
+
   header {
     @apply text-black dark:text-inherit;
     @apply bg-neutral-300 dark:bg-neutral-700;

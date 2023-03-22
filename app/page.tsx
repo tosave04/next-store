@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export const metadata = {
   title: "Page d'accueil",
 }
@@ -15,6 +17,7 @@ export default function Home() {
           accusantium in voluptatem expedita et sint sunt! Ex voluptates totam et praesentium laboriosam et fugit sunt
           in odio delectus et dolore quod eos nisi consequuntur cum temporibus sapiente.
         </p>
+        <Link href={"#!"}>Texte de lien</Link>
         <p>
           Lorem ipsum dolor sit amet. Ea iure incidunt ad assumenda tempore rem rerum doloribus. Ad vero magni est quam
           quae a consequatur doloremque. Aut rerum fugiat sit quod voluptas nam assumenda dolore sit omnis deleniti aut
