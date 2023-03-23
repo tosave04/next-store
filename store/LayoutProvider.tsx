@@ -28,7 +28,6 @@ export default function LayoutProvider({ children }: { children: React.ReactNode
   // Cart
   const [cart, setCart] = useState(false)
   const openCart = () => {
-    setBgCacheVisible(true)
     setCart(true)
   }
 

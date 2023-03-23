@@ -30,7 +30,7 @@ export default function Sidebar() {
         />
       </div>
 
-      <div className="flex flex-col justify-between flex-1 mt-4">
+      <div className="flex flex-col justify-between flex-1">
         <ul>
           <Element title={"Accueil"} Icon={BiHome} href={"#"} />
           <Element title={"Compte"} Icon={BiUser} href={"#"} />
@@ -54,7 +54,7 @@ const Element = ({ title, Icon, href }: { title: string; Icon: IconType; href: s
     <li>
       <a
         href={href}
-        className="flex flex-row items-center gap-4 h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+        className="flex flex-row items-center gap-4 h-8 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
       >
         <Icon className="h-6 w-6 text-gray-400" />
         <span className="text-sm font-medium">{title}</span>
