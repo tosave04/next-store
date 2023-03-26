@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  @import "./styles/colors.css";
+  @import "./styles/nav.css";
+  @import "./styles/aside.css";
+
   body {
     @apply text-base;
   }
@@ -17,14 +21,10 @@
     @apply w-full;
   }
 
-  main {
-    @apply container;
-    @apply mx-auto;
-    @apply py-2 md:py-4;
-    @apply px-2 md:px-0;
-  }
-
-  aside {
+  main,
+  nav > div {
+    @apply container mx-auto;
+    @apply px-2 md:px-0 py-2 md:py-4;
   }
 
   section,
@@ -34,6 +34,10 @@
   p {
     @apply text-sm lg:text-base;
     @apply my-1 lg:my-2;
+  }
+
+  svg {
+    @apply hover:scale-110;
   }
 
   blockquote p {
@@ -171,63 +175,5 @@
   tfoot td {
     @apply px-2;
     @apply py-1 lg:py-2;
-  }
-
-  /* Couleurs */
-  body {
-    @apply text-neutral-700 dark:text-neutral-300;
-    @apply dark:bg-neutral-800;
-  }
-
-  a {
-    @apply text-sky-500;
-    @apply hover:text-sky-700 dark:hover:text-sky-300;
-  }
-
-  svg {
-    @apply hover:scale-110;
-  }
-
-  header {
-    @apply text-black dark:text-inherit;
-    @apply bg-neutral-300 dark:bg-neutral-700;
-  }
-
-  nav {
-    @apply text-neutral-100 dark:text-inherit;
-    @apply bg-neutral-700 dark:bg-neutral-900;
-  }
-
-  nav svg,
-  nav svg > path {
-    @apply text-neutral-100 dark:text-neutral-300 stroke-neutral-100 dark:stroke-neutral-300;
-  }
-
-  footer {
-    @apply text-neutral-100 dark:text-inherit;
-    @apply bg-neutral-700 dark:bg-neutral-900;
-  }
-
-  strong {
-    @apply text-neutral-900 dark:text-white;
-  }
-
-  hr {
-    @apply border-neutral-200 dark:border-neutral-700;
-  }
-
-  blockquote p {
-    @apply bg-neutral-200 dark:bg-neutral-700;
-  }
-
-  code {
-    @apply text-white dark:text-black;
-    @apply bg-neutral-700 dark:bg-neutral-200;
-  }
-
-  thead,
-  tfoot {
-    @apply text-neutral-100 dark:text-neutral-800;
-    @apply bg-black dark:bg-white;
   }
 }

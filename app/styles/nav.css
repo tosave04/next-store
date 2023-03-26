@@ -1,0 +1,25 @@
+nav {
+  @apply sticky top-0;
+}
+
+nav > div {
+  @apply h-16;
+  @apply flex items-center gap-12;
+}
+
+nav > div > div {
+  @apply flex justify-center items-center gap-6 md:gap-10 lg:gap-12;
+}
+
+nav svg {
+  @apply w-8 h-8;
+}
+
+nav > div > div > div,
+nav div > a {
+  @apply flex items-center gap-2 cursor-pointer;
+}
+
+nav span {
+  @apply hidden lg:block;
+}

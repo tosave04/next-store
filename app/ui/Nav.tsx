@@ -2,32 +2,49 @@
 
 import Link from "next/link"
 import { useLayout } from "../../store/LayoutProvider"
-import { BiMoon, BiSun, BiMenu, BiCart, BiHome } from "react-icons/bi"
+import { BiMoon, BiSun, BiMenu, BiCart, BiHome, BiUser } from "react-icons/bi"
 import { GrTest } from "react-icons/gr"
+import Logo from "./Logo"
 
 export default function Nav() {
   const { darkMode, toogleDarkMode, openSidebar, openCart } = useLayout()
 
   return (
-    <nav className="h-16 flex justify-center items-center gap-12">
-      <div onClick={openSidebar}>
-        <BiMenu className="w-8 h-8 cursor-pointer" />
-      </div>
+    <nav>
+      <div>
+        <div>
+          <div onClick={openSidebar}>
+            <BiMenu />
+          </div>
 
-      <Link href={"/"}>
-        <BiHome className="w-8 h-8 cursor-pointer" />
-      </Link>
+          <Link className="group" href={"/"}>
+            <BiHome className="group-hover:scale-110" />
+            <span>Accueil</span>
+          </Link>
 
-      <Link href={"/typo"}>
-        <GrTest className="w-7 h-7 cursor-pointer" />
-      </Link>
+          <Link className="group" href={"/typo"}>
+            <GrTest className="w-6 h-6 group-hover:scale-110" />
+            <span>Typo</span>
+          </Link>
+        </div>
 
-      <div onClick={openCart}>
-        <BiCart className="w-8 h-8 cursor-pointer" />
-      </div>
+        <Logo />
 
-      <div className="cursor-pointer" onClick={toogleDarkMode}>
-        {darkMode ? <BiMoon className="w-8 h-8" /> : <BiSun className="w-8 h-8" />}
+        <div>
+          <div className="group" onClick={openCart}>
+            <BiCart className="group-hover:scale-110" />
+            <span>Panier</span>
+          </div>
+
+          <Link className="group" href={"/compte"}>
+            <BiUser className="group-hover:scale-110" />
+            <span>Compte</span>
+          </Link>
+
+          <div className="cursor-pointer" onClick={toogleDarkMode}>
+            {darkMode ? <BiMoon /> : <BiSun />}
+          </div>
+        </div>
       </div>
     </nav>
   )

@@ -1,3 +1,3 @@
 export default function Logo() {
-	return null
+  return <div className="flex-1">LOGO</div>
 }
