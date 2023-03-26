@@ -1,14 +1,14 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "Page d'accueil",
+  title: "Typographie",
 }
 
-export default function Home() {
+export default function Typo() {
   return (
-    <section className="md:grid grid-cols-3">
+    <section className="md:grid grid-cols-2">
       <div>
-        <h1>Page d&apos;accueil</h1>
+        <h1>Titre de la page h1</h1>
         <h2>Titre secondaire h2</h2>
         <h3>Sous-titre h3</h3>
         <p>
@@ -34,12 +34,16 @@ export default function Home() {
           <li>Mix flour, baking powder, sugar, and salt.</li>
           <li>In another bowl, mix eggs, milk, and oil.</li>
           <li>Stir both mixtures together.</li>
-          <li>Fill muffin tray 3/4 full.</li>
+          <li>
+            Fill muffin tray 3/4 full.
+            <ol>
+              <li>facilis non quia</li>
+              <li>laboriosam voluptatem</li>
+            </ol>
+          </li>
           <li>Bake for 20 minutes.</li>
         </ol>
-      </div>
 
-      <div>
         <h4>Sous-titre h4</h4>
         <p>
           Et dolore facilis non quia obcaecati est sunt fugit et laboriosam voluptatem. Et assumenda sint eum dolor
@@ -55,7 +59,9 @@ export default function Home() {
             </ul>
           </li>
         </ul>
+      </div>
 
+      <div>
         <h2>Titre secondaire h2</h2>
         <p>
           Qui voluptatibus <code>&lsaquo;code&rsaquo; recusandae &lsaquo;/code&rsaquo;</code> qui odit tenetur in sequi
@@ -69,9 +75,7 @@ export default function Home() {
             Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.
           </p>
         </blockquote>
-      </div>
 
-      <div>
         <h2>Titre secondaire h2</h2>
         <p>
           Et quia modi qui ipsa consequatur ut dolorum ipsum id fugit sunt. Hic quia dolorem qui repellendus aliquid vel

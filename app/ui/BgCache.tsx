@@ -7,7 +7,7 @@ export default function BgCache() {
 
   return (
     <div
-      className={`fixed inset-0 bg-neutral-500/30 ${bgCacheVisible ? "scale-100" : "scale-0"}`}
+      className={`fixed inset-0 bg-neutral-500/30 ${bgCacheVisible ? "scale-100" : "scale-0"} z-50`}
       onClick={closeBgCache}
     />
   )

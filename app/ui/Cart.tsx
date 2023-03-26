@@ -10,8 +10,8 @@ export default function Cart() {
 
   return (
     <>
-      <div className={`fixed inset-0 ${!cart && "hidden"}`} onClick={closeBgCache} />
-      <aside className={`fixed h-full bg-neutral-500/30 transition-all ${cart ? expanded : hidden}`}>
+      <div className={`fixed inset-0 ${!cart && "hidden"} z-50`} onClick={closeBgCache} />
+      <aside className={`fixed h-full bg-neutral-500/30 transition-all ${cart ? expanded : hidden} z-50`}>
         <div className="flex flex-col gap-2 h-1/2 p-4 py-8 bg-white border-r dark:bg-gray-900 dark:border-gray-700 shadow-lg">
           <h2 className="text-3xl font-semibold text-gray-800 dark:text-white m-0">Panier</h2>
           <hr className="my-4 border-gray-200 dark:border-gray-600" />
